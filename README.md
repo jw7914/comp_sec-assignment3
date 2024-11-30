@@ -28,19 +28,15 @@ Open Quantum Safe (OQS) for securing Retail and E-Commerce.
 
 - Copied form [liboqs-python](https://github.com/open-quantum-safe/liboqs-python) repo of Open Quantum Safe
 - [liboqs](https://github.com/open-quantum-safe/liboqs)
-  - [git](https://git-scm.com/)
-  - [CMake](https://cmake.org/)
-  - C compiler,
-    e.g., [gcc](https://gcc.gnu.org/), [clang](https://clang.llvm.org),
-    [MSVC](https://visualstudio.microsoft.com/vs/) etc.
-  - [Python 3](https://www.python.org/)
+- [git](https://git-scm.com/)
+- [CMake](https://cmake.org/)
+- C compiler,
+  e.g., [gcc](https://gcc.gnu.org/), [clang](https://clang.llvm.org),
+  [MSVC](https://visualstudio.microsoft.com/vs/) etc.
+- [Python 3](https://www.python.org/)
 
 ### Steps
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/username/repository.git
-   ```
+1. Install Prerequisites and follow steps form [liboqs-python](https://github.com/open-quantum-safe/liboqs-python)
 
 2.
