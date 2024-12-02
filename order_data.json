@@ -1,0 +1,52 @@
+{
+    "order_id": "7584638269",
+    "customer_name": "Hemanth",
+    "customer_email": "hemanth@nyu.edu",
+    "customer_phone": "+16745342986",
+    "shipping_address": {
+        "street": "6 MetroTech Center",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "11201",
+        "country": "USA"
+    },
+    "payment_method": "PayPal",
+    "payment_details": {
+        "account_email": "hemanth@nyu.edu",
+        "transaction_id": "PAY123456789"
+    },
+    "product_details": [
+        {
+            "sku": "PROD001",
+            "name": "Apple iPhone 16 Pro Max",
+            "description": "Latest model smartphone",
+            "price": 1199.99,
+            "quantity": 1
+        },
+        {
+            "sku": "PROD002",
+            "name": "Wireless Earbuds",
+            "description": "Noise-cancelling earbuds",
+            "price": 149.99,
+            "quantity": 2
+        }
+    ],
+    "order_date": "2024-12-01 10:20:57",
+    "subtotal": 1499.97,
+    "tax_rate": 0.08,
+    "tax_amount": 87.99,
+    "total_price": 1604.03,
+    "order_status": "Created",
+    "estimated_delivery_date": "2024-12-05",
+    "tracking_information": {
+        "tracking_number": "TRACK987654321",
+        "carrier": "FedEx",
+        "status": "In Transit"
+    },
+    "shipping_method": "Express Shipping",
+    "shipping_cost": 15.99,
+    "last_updated": "2024-12-01 22:20:57",
+    "special_instructions": "Please leave package at the front door",
+    "gift_wrapping": "True",
+    "gift_message": "Happy Birthday! Enjoy your new gadgets!"
+}
