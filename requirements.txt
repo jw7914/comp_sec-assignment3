@@ -1,13 +1,8 @@
 cffi==1.17.1
 cryptography==44.0.0
-liboqs-python @ file:///Users/hemanth/Fall2024/ISP/Assignments/Assignment-3.2-LATEST/comp_sec-assignment3/liboqs-python
-nose2==0.15.1
-pycparser==2.22
-cffi==1.17.1
-cryptography==44.0.0
 execnet==2.1.1
 iniconfig==2.0.0
-liboqs-python @ file:///Users/jasonwu/Desktop/Coding/CompSciClasses/Computer_Security/Assignment3/liboqs-python
+liboqs-python @ file:///Users/hemanth/Fall2024/ISP/Assignments/Assignment-3.2-LATEST/comp_sec-assignment3/liboqs-python
 nose2==0.15.1
 packaging==24.2
 pluggy==1.5.0
