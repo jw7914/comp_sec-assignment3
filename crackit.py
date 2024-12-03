@@ -40,26 +40,10 @@ class QuantumSafeOrderSystem:
         logger.info("Creating new order")
         order_id = order_data['order_id']
 
-        static_fields = {
-            'order_id': order_data['order_id'],
-            'customer_name': order_data['customer_name'],
-            'customer_email': order_data['customer_email'],
-            'customer_phone': order_data['customer_phone'],
-            'shipping_address': order_data['shipping_address'],
-            'payment_method': order_data['payment_method'],
-            'payment_details': order_data['payment_details'],
-            'product_details': order_data['product_details'],
-            'order_date': order_data['order_date'],
-            'subtotal': order_data['subtotal'],
-            'tax_rate': order_data['tax_rate'],
-            'tax_amount': order_data['tax_amount'],
-            'total_price': order_data['total_price']
-        }
+        json_dump = json.dumps(order_data, sort_keys=True)
+        logger.debug(f"fields JSON: {json_dump}")
 
-        static_json = json.dumps(static_fields, sort_keys=True)
-        logger.debug(f"Static fields JSON: {static_json}")
-
-        signature = self.signer.sign(static_json.encode())
+        signature = self.signer.sign(json_dump.encode())
         logger.debug(f"Signature length: {len(signature)} bytes")
 
         order_json = json.dumps(order_data)
@@ -115,26 +99,10 @@ class QuantumSafeOrderSystem:
 
         order_data = json.loads(decrypted_data.decode())
 
-        static_fields = {
-            'order_id': order_data['order_id'],
-            'customer_name': order_data['customer_name'],
-            'customer_email': order_data['customer_email'],
-            'customer_phone': order_data['customer_phone'],
-            'shipping_address': order_data['shipping_address'],
-            'payment_method': order_data['payment_method'],
-            'payment_details': order_data['payment_details'],
-            'product_details': order_data['product_details'],
-            'order_date': order_data['order_date'],
-            'subtotal': order_data['subtotal'],
-            'tax_rate': order_data['tax_rate'],
-            'tax_amount': order_data['tax_amount'],
-            'total_price': order_data['total_price']
-        }
-
-        static_json = json.dumps(static_fields, sort_keys=True)
+        json_dump = json.dumps(order_data, sort_keys=True)
 
         try:
-            is_valid = self.signer.verify(static_json.encode(), signature, self.public_key)
+            is_valid = self.signer.verify(json_dump.encode(), signature, self.public_key)
             logger.info(f"Signature verification result: {'Valid' if is_valid else 'Invalid'}")
             return is_valid, order_data if is_valid else "Invalid signature"
         except oqs.SignatureVerificationError:
@@ -187,17 +155,17 @@ if order_data:
     logger.info(f"Order verification: {'Valid' if is_valid else 'Invalid'}")
     logger.debug(f"Verified data: {verified_data}")
 
-    logger.info("Updating the order with a dynamic field")
+    logger.info("Updating the order with a field")
     update_result, update_message = order_system.update_order(order_id, {"order_status": "Processing"})
-    logger.info(f"Dynamic field update: {update_message}")
+    logger.info(f"field update: {update_message}")
     logger.info("Verifying the updated order")
     is_valid, verified_data = order_system.verify_order(order_id)
     logger.info(f"Updated order verification: {'Valid' if is_valid else 'Invalid'}")
     logger.debug(f"Updated verified data: {verified_data}")
 
-    logger.info("Updating the order with a static field")
+    logger.info("Updating the order with a field")
     update_result, update_message = order_system.update_order(order_id, {"customer_name": "Wu"})
-    logger.info(f"Static field update: {update_message}")
+    logger.info(f"field update: {update_message}")
     logger.info("Verifying the updated order")
     is_valid, verified_data = order_system.verify_order(order_id)
     logger.info(f"Updated order verification: {'Valid' if is_valid else 'Invalid'}")
