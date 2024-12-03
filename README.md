@@ -48,7 +48,8 @@ Open Quantum Safe (OQS) for securing Retail and E-Commerce.
    ```bash
    pip3 install cryptography
 3. Ensure virtual enviornment where liboqs and cryptography are installed is active
-4. To execute program, run
+  - Use requirements.txt to verify proper installation of required libraries
+5. To execute program, run
    ```bash
    python3 crackpit.py
 
