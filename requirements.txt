@@ -1,0 +1,5 @@
+cffi==1.17.1
+cryptography==44.0.0
+liboqs-python @ file:///Users/hemanth/Fall2024/ISP/Assignments/Assignment-3.2-LATEST/comp_sec-assignment3/liboqs-python
+nose2==0.15.1
+pycparser==2.22
