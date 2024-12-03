@@ -20,7 +20,12 @@ Open Quantum Safe (OQS) for securing Retail and E-Commerce.
 
 ## Features
 
-- Digital Signatures
+- Quantum Resistent Signatures using SPHINCS+
+  - Ensures integrity of order details
+  - Ensures anti-tampering of order details
+  - Ensuring authenticity of transactions, ensuring they originate from legitimate sources 
+- Encrypted Order Details to ensure
+  - Ensures confindentialty of order details espically pesonally identifable information so only authorized users can see the details
 
 ---
 
@@ -39,4 +44,11 @@ Open Quantum Safe (OQS) for securing Retail and E-Commerce.
 
 1. Install Prerequisites and follow steps form [liboqs-python](https://github.com/open-quantum-safe/liboqs-python)
 
-2.
+2. Within the same python virtual envorinment, run:
+   ```bash
+   pip3 install cryptography
+3. Ensure virtual enviornment where liboqs and cryptography are installed is active
+4. To execute program, run
+   ```bash
+   python3 crackpit.py
+
